@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -3077,6 +3083,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iskuriyer.BusinessLayer\iskuriyer.BusinessLayer.csproj">
+      <Project>{c05ed6cd-3e1e-43b9-b5b8-d07bbcb22afa}</Project>
+      <Name>iskuriyer.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iskuriyer.DataAccessLayer\iskuriyer.DataAccessLayer.csproj">
+      <Project>{cd1f4e76-d8c8-4026-8855-f712bc715f3a}</Project>
+      <Name>iskuriyer.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iskuriyer.Entity\iskuriyer.Entity.csproj">
+      <Project>{873c4f4f-5476-4c4d-9518-e3f48909f3ac}</Project>
+      <Name>iskuriyer.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

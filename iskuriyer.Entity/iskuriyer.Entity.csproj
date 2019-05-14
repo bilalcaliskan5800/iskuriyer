@@ -59,10 +59,13 @@
     <Compile Include="Kursiyer_YabanciDil.cs" />
     <Compile Include="Kursiyer_YazilimDil.cs" />
     <Compile Include="Kursiyer_Yetenek.cs" />
+    <Compile Include="Liseler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sirket.cs" />
     <Compile Include="SirketBilgileri.cs" />
     <Compile Include="SirketIlanlari.cs" />
+    <Compile Include="Universiteler.cs" />
+    <Compile Include="Yetenek.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

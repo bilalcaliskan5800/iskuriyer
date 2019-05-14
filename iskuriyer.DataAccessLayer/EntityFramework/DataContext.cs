@@ -1,4 +1,4 @@
-namespace iskuriyer.DataAccessLayer.EntityFramework
+namespace iskuriyer.DataAccessLayer
 {
     using System;
     using System.Data.Entity;
@@ -22,9 +22,12 @@ namespace iskuriyer.DataAccessLayer.EntityFramework
         public virtual DbSet<Kursiyer_YabanciDil> Kursiyer_YabanciDil { get; set; }
         public virtual DbSet<Kursiyer_YazilimDil> Kursiyer_YazilimDil { get; set; }
         public virtual DbSet<Kursiyer_Yetenek> Kursiyer_Yetenek { get; set; }
+        public virtual DbSet<Liseler> Liseler { get; set; }
         public virtual DbSet<Sirket> Sirket { get; set; }
         public virtual DbSet<SirketBilgileri> SirketBilgileri { get; set; }
         public virtual DbSet<SirketIlanlari> SirketIlanlari { get; set; }
+        public virtual DbSet<Universiteler> Universiteler { get; set; }
+        public virtual DbSet<Yetenek> Yetenek { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

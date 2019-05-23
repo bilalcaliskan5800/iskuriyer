@@ -1,5 +1,12 @@
 ﻿@using iskuriyer.Entity
+@using Iskuriyer.Models
+@model RegisterModel
 @{
+    /**/
+    //Kursiyer kursiyer = new Kursiyer();
+    //Kursiyer_Iletisim kursiyer_Iletisim = new Kursiyer_Iletisim();
+    //Sirket sirket = new Sirket();
+
     ViewBag.Title = "Iskuriyer - Sizinde bir işiniz olsun";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
@@ -33,55 +40,52 @@
 
                             <!-- REGISTER -->
                             <div class="content">
-                                <div id="register">
-                                    <form action="/KursiyerMan/InsertKursiyer" method="post">
-                                        <input type="text" placeholder="Adınız" name="Adi">
-                                        <input type="text" placeholder="Soyadınız" name="Soyadi">
-                                        <input type="email" placeholder="Email Adresi" name="Eposta">
-                                        <input type="date" placeholder="Dogum Tarihi" name="DogumTarihi">
-                                        <input type="text" placeholder="Telefon Numarası" name="TelefonNo">
-                                        <select name="Cinsiyet">
-                                            <option value="Erkek">Erkek</option>
-                                            <option value="Bayan">Bayan</option>
-                                            <option value="Diger">Diğer</option>
+                             
+                                <div id="kursiyer">
+                                    @Html.BeginForm("InsertKursiyer", "KursiyerMan", FormMethod.Post);
 
-                                        </select>
-                                        <input type="password" placeholder="Parola" name="Sifre">
-                                        <button type="submit">Kayıt Ol</button>
-                                    </form>
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Adi, new { @type = "text", placeholder = "Lütfen Adınız Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.Kursiyer_iletisim.EPosta, new { @type = "email", placeholder = "example@mail.ru" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Soyadi, new { @type = "text", placeholder = "Lütfen Soyadınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.DogumTarihi, new { @type = "date", placeholder = "Doğum Tarihi" })
+                                    @Html.TextBoxFor(Model => Model.Kursiyer_iletisim.TelefonNo, new { @type = "number", placeholder = "Lütfen Telefon Numaranızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Sifre, new { @type = "password", placeholder = "password" })
+                                    <button type="submit">Kayıt Ol</button>
+
                                 </div>
 
-                                
+
                                 <div id="log-in" class="active">
-                                  @Html.BeginForm("InsertBussines", "BusinessMan", FormMethod.Post){
-                                    @*<form action="/BusinessMan/InsertBussines" method="post">*@
-                                        <input type="text" placeholder="Sirket Adi" name="SirketAdi">
-                                        <input type="email" placeholder="Email Adresi" name="Eposta">
+                                    @Html.BeginForm("InsertBussines", "BusinessMan", FormMethod.Post);
 
-                                        <input type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi">
-                                        <input type="text" placeholder="Yetkili Adi - Soyadi" name="YetkiliAdiSoyadi">
-                                        <input type="tel" placeholder="Phone" name="Telefon">
-                                        <select name="Il">
-                                            @foreach (var item in Session["Iller"] as List<Iller>)
-                                            {
-                                                <option value="@item.sehir">@item.sehir</option>
-                                            }
-                                        </select>
-                                        <select name="Ilce">
-                                            <option value="Ilce1">Ilce1</option>
-                                        </select>
-                                    <input type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi">
+                                    @Html.TextBoxFor(Model => Model.sirket.SirketAdi, new { @type = "text", placeholder = "Lütfen Sirket Adınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.EPosta, new { @type = "email", placeholder = "Lütfen Eposta Adresinizi Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.KullaniciAdi, new { @type = "text", placeholder = "Lütfen Kullanıcı Adınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.YetkiliAdiSoyadi, new { @type = "text", placeholder = "Lütfen Yetkili Adi-Soyadını Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.Telefon, new { @type = "number", placeholder = "Lütfen Telefon Numarası Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.VergiNo, new { @type = "text", placeholder = "Lütfen Vergi No Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.Sifre, new { @type = "password", placeholder = "Lütfen Şifrenizi Adınızı Giriniz" })
 
-                                        <input type="password" placeholder="Parola">
-                                        <button type="submit">Kaydol</button>
-                                        @*<div class="forget">Parolanızı mı Unuttunuz? <a href="#.">Buraya Tıklayın</a></div>*@
-                                    @*</form>*@  }
+                                    <select name="Il">
+                                        @foreach (var item in Session["Iller"] as List<Iller>)
+                                        {
+                                            <option value="@item.sehir">@item.sehir</option>
+                                        }
+                                    </select>
+                                    <select name="Ilce">
+                                        <option value="Ilce1">Ilce1</option>
+                                    </select>
+                                    @* buralara combobox ile ilgili şeyler gelecek(vergi dairesi falan)*@
+
+
+                                    <button type="submit">Kaydol</button>
+
                                 </div>
                                 <div id="forget">
-                                    <form>
-                                        <input type="email" placeholder="Email Adresi">
-                                        <button type="submit">Kaydol</button>
-                                    </form>
+                                    @*<form>
+                                            <input type="email" placeholder="Email Adresi">
+                                            <button type="submit">Kaydol</button>
+                                        </form>*@
                                 </div>
                             </div>
                         </div>

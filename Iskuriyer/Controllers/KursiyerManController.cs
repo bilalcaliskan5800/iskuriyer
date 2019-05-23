@@ -23,7 +23,7 @@ namespace Iskuriyer.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult InsertKursiyer(KRegisterModel kursiyer)
+        public ActionResult InsertKursiyer(Kursiyer kursiyer,Kursiyer_Iletisim kursiyer_Iletisim)
         {
             Kursiyer kur = new Kursiyer();
             Kursiyer_Iletisim ki = new Kursiyer_Iletisim();
@@ -31,14 +31,17 @@ namespace Iskuriyer.Controllers
             kur.Soyadi = kursiyer.Soyadi;
             kur.Sifre = kursiyer.Sifre;
             kur.DogumTarihi = kursiyer.DogumTarihi;
-            ki.TelefonNo = kursiyer.TelefonNo;
-            ki.EPosta = kursiyer.Eposta;
+            ki.TelefonNo = kursiyer_Iletisim.TelefonNo;
+            ki.EPosta = kursiyer_Iletisim.EPosta;
             km.InsertKursiyer(kur);
             int id=kur.ID;
             ki.KursiyerID = id;
             kim.KursiyerIletisimInsert(ki);
-
+            
             return RedirectToAction("Index", "Home");
         }
+
+
+
     }
 }

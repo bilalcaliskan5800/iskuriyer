@@ -20,6 +20,8 @@ namespace Iskuriyer.Controllers
         {
             return View();
         }
+
+
         [HttpPost]
         public ActionResult InsertBussines(Sirket sirket)
         {

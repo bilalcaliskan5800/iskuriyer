@@ -2860,7 +2860,9 @@
     <Content Include="js\uou-accordions.js" />
     <Content Include="js\uou-tabs.js" />
     <Content Include="less\css\business-layout.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_LayoutPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -2873,7 +2875,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\KRegisterModel.cs" />
+    <Compile Include="Models\BRegisterModel.cs" />
+    <Compile Include="Models\KReegisterModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

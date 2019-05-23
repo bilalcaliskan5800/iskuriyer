@@ -1,10 +1,10 @@
-namespace iskuriyer.DataAccessLayer
+namespace iskuriyer.DataAccessLayer.EntityFramework
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using iskuriyer.Entity;
+    using Entity;
 
     public partial class DataContext : DbContext
     {
@@ -13,6 +13,8 @@ namespace iskuriyer.DataAccessLayer
         {
         }
 
+        public virtual DbSet<Ilceler> Ilceler { get; set; }
+        public virtual DbSet<Iller> Iller { get; set; }
         public virtual DbSet<Kursiyer> Kursiyer { get; set; }
         public virtual DbSet<Kursiyer_Adres> Kursiyer_Adres { get; set; }
         public virtual DbSet<Kursiyer_Deneyim> Kursiyer_Deneyim { get; set; }

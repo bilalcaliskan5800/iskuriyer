@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iskuriyer.BusinessLayer;
+using iskuriyer.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,11 @@ namespace Iskuriyer.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Login
+        IllerManager illerManager = new IllerManager();
         public ActionResult Index()
         {
+            List<Iller> Iller = illerManager.GetIller();
+            Session["Iller"] = Iller;
             return View();
         }
     }

@@ -18,7 +18,13 @@ namespace iskuriyer.BusinessLayer
             
 
         } 
-        
+
+
+        public Kursiyer GetKursiyer(string Name)
+        {
+            return repo.Find(x => x.Adi == Name);
+
+        }
 
     }
 }

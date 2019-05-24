@@ -37,5 +37,23 @@ namespace Iskuriyer.Controllers
             bm.InsertBusiness(sir);
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult LoginBussines()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult LoginBussines(Sirket sirket)
+        {
+            Sirket sir = bm.GetSirket(sirket.KullaniciAdi);
+            if (sir.Sifre==sirket.Sifre)
+            {
+                Session["SirketLogin"] = sir;
+
+            }
+
+            return RedirectToAction("Index","Home");
+        }
     }
 }

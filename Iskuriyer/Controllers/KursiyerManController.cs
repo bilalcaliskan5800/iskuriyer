@@ -42,6 +42,25 @@ namespace Iskuriyer.Controllers
         }
 
 
+        public ActionResult KursiyerLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult KursiyerLogin(Kursiyer kursiyer)
+        {
+
+            Kursiyer kur = km.GetKursiyer(kursiyer.Adi);
+            if (kur.Sifre==kursiyer.Sifre)
+            {
+                Session["KursiyerLogin"]=kur;
+
+
+            }
+            return RedirectToAction("Index","Home");
+        }
+
+
 
     }
 }

@@ -15,5 +15,10 @@ namespace iskuriyer.BusinessLayer
         {
             repo.Insert(sirket);
         }
+        public Sirket GetSirket(string Kullanıcıadi)
+        {
+
+            return repo.Find(x => x.KullaniciAdi == Kullanıcıadi);
+        }
     }
 }

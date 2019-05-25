@@ -48,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessManagerBLL.cs" />
+    <Compile Include="IllerManager.cs" />
+    <Compile Include="KursiyerIletisimManagerBLL.cs" />
+    <Compile Include="KursiyerManagerBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

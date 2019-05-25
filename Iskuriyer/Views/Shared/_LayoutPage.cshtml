@@ -39,8 +39,8 @@
                         <li><a href="#" class="fa fa-google-plus"></a></li>
                     </ul>
                     <ul class="authentication">
-                        <li><a href="#">Giriş Yap</a></li>
-                        <li><a href="#">Kayıt Ol</a></li>
+                        <li><a href="/Home/Login">Giriş Yap</a></li>
+                        <li><a href="/Home/Register">Kayıt Ol</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,10 +51,10 @@
         <div class="box-shadow-for-ui">
             <div class="uou-block-2b">
                 <div class="container">
-                    <a href="#" class="logo"><img src="~/images/logo.png" alt=""></a> <a href="#" class="mobile-sidebar-button mobile-sidebar-toggle"><span></span></a>
+                    <a href="/Home/Index" class="logo"><img src="~/images/logo.png" alt=""></a> <a href="/Home/Index" class="mobile-sidebar-button mobile-sidebar-toggle"><span></span></a>
                     <nav class="nav">
                         <ul class="sf-menu">
-                            <li class="active"><a href="@Url.Action("Index", "Home")"><i class="fa  fa-home"></i></a></li>
+                            <li class="active"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i></a></li>
                             <li>@Html.ActionLink("Profesyoneller", "GetEmployee", "Employee")</li>
                             <li>@Html.ActionLink("Şirket Profili", "BusinessProfile", "Profile")</li>
                             <li> @Html.ActionLink("Kullanıcı Paneli", "UserDash", "Profile")</li>

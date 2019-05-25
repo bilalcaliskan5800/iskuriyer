@@ -1,0 +1,66 @@
+﻿@using Iskuriyer.Models
+@model RegisterModel
+
+@{
+    ViewBag.Title = "Giriş";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<!-- PRO BANNER HEAD -->
+<div class="banr-head">
+    <div class="container">
+        <div class="row">
+
+            <!-- CONTENT -->
+            <div class="col-sm-7">
+            </div>
+
+            <div class="col-sm-5">
+                <div class="login-sec">
+
+                    <!-- TABS -->
+                    <div class="uou-tabs">
+                        <ul class="tabs">
+
+
+                            <li><a href="#log-in">Şirket Giriş</a></li>
+                            <li class="active"><a href="#log-inb">Kursiyer Giriş</a></li>
+                        </ul>
+
+                        <div class="content">
+                            <div id="log-in" class="active">
+                                @using (Html.BeginForm("LoginBussines", "BusinessMan", FormMethod.Post))
+                                {
+                                    @Html.TextBoxFor(Model => Model.sirket.KullaniciAdi, new { @type = "text", placeholder = "Lütfen Kullanıcı Adınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.Sifre, new { @type = "text", placeholder = "Lütfen Şifrenizi  Giriniz" })
+
+
+
+                                    <input type="submit" value="Giriş Yap" />
+                                }
+
+
+                            </div>
+                            <div id="log-inb">
+                                @using (Html.BeginForm("KursiyerLogin", "KursiyerMan", FormMethod.Post))
+                                {
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Adi, new { @type = "text", placeholder = "Kursiyer Kullanıcı Adınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Sifre, new { @type = "text", placeholder = "Kursiyer Şifrenizi  Giriniz" })
+
+
+
+                                    <input type="submit" value="Giriş Yap" />
+                                }
+
+
+                            </div>
+                            <div id="forget">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

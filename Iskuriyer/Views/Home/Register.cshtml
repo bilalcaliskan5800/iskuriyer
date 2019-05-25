@@ -1,0 +1,87 @@
+﻿@using Iskuriyer.Models
+@model RegisterModel
+
+@{
+    ViewBag.Title = "KayitOl";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<!-- PRO BANNER HEAD -->
+<div class="banr-head">
+    <div class="container">
+        <div class="row">
+
+            <!-- CONTENT -->
+            <div class="col-sm-7">
+            </div>
+
+            <div class="col-sm-5">
+                <div class="login-sec">
+
+                    <!-- TABS -->
+                    <div class="uou-tabs">
+                        <ul class="tabs">
+                            <li class="active"><a href="#registerb" id="sing-in">Şirket Kaydol</a></li>
+                            <li><a href="#register" id="sing-in">Kursiyer Kaydol</a></li>
+                        </ul>
+
+                        <!-- REGISTER -->
+                        <div class="content">
+
+                            <div id="register" class="active">
+                                @using (Html.BeginForm("InsertKursiyer", "KursiyerMan", FormMethod.Post))
+                                {
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Adi, new { @type = "text", placeholder = "Lütfen Adınız Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.Kursiyer_iletisim.EPosta, new { @type = "email", placeholder = "example@mail.ru" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Soyadi, new { @type = "text", placeholder = "Lütfen Soyadınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.DogumTarihi, new { @type = "date", placeholder = "Doğum Tarihi" })
+                                    @Html.TextBoxFor(Model => Model.Kursiyer_iletisim.TelefonNo, new { @type = "number", placeholder = "Lütfen Telefon Numaranızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Sifre, new { @type = "password", placeholder = "password" })
+
+                                    <input type="submit" value="Kayıt Ol" />
+                                    <input type="text" style="visibility:hidden" />
+                                }
+                            </div>
+
+                            <div id="registerb">
+                                @using (Html.BeginForm("InsertBussines", "BusinessMan", FormMethod.Post))
+                                {
+                                    @Html.TextBoxFor(Model => Model.sirket.SirketAdi, new { @type = "text", placeholder = "Lütfen Sirket Adınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.EPosta, new { @type = "email", placeholder = "Lütfen Eposta Adresinizi Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.KullaniciAdi, new { @type = "text", placeholder = "Lütfen Kullanıcı Adınızı Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.YetkiliAdiSoyadi, new { @type = "text", placeholder = "Lütfen Yetkili Adi-Soyadını Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.Telefon, new { @type = "number", placeholder = "Lütfen Telefon Numarası Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.VergiNo, new { @type = "text", placeholder = "Lütfen Vergi No Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.Sifre, new { @type = "password", placeholder = "Lütfen Şifrenizi Adınızı Giriniz" })
+
+                                    @*< select name = "Il" >
+                                        @foreach (var item in Session["Iller"] as List<Iller>)
+                                        {
+                                            < option value = "@item.sehir" > @item.sehir </ option >
+                                        }
+                                        </ select >
+                                        < select name = "Ilce" >
+
+
+                                        < option value = "Ilce1" > Ilce1 </ option >
+
+
+                                        </ select >
+                                        @* buralara combobox ile ilgili şeyler gelecek(vergi dairesi falan)*@
+
+
+                                    <input type="submit" value="Kayıt Ol" />
+                                }
+
+
+                            </div>
+                            <div id="forget">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

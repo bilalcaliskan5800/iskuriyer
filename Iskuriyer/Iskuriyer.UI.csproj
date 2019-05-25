@@ -1412,6 +1412,8 @@
     <Content Include="images\icon-prifile-2.png" />
     <Content Include="images\icon-prifile-3.png" />
     <Content Include="images\icon-ver.png" />
+    <Content Include="images\index_background.jpg" />
+    <Content Include="images\login_background.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\main-bg.jpg" />
     <Content Include="images\med-avatar.jpg" />
@@ -1430,6 +1432,9 @@
     <Content Include="images\profile-bnr-1.jpg" />
     <Content Include="images\profile-bnr.jpg" />
     <Content Include="images\profile-img.jpg" />
+    <Content Include="images\register_background.jpg" />
+    <Content Include="images\register_background2.jpg" />
+    <Content Include="images\register_background3.jpg" />
     <Content Include="images\sm-avatar.jpg" />
     <Content Include="images\sponser-bg.jpg" />
     <Content Include="images\sponsor_logo1.png" />

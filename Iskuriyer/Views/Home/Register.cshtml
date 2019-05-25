@@ -7,13 +7,12 @@
 }
 
 <!-- PRO BANNER HEAD -->
-<div class="banr-head">
+<div class="banr-head-register">
     <div class="container">
         <div class="row">
 
             <!-- CONTENT -->
-            <div class="col-sm-7">
-            </div>
+
 
             <div class="col-sm-5">
                 <div class="login-sec">
@@ -55,19 +54,19 @@
                                     @Html.TextBoxFor(Model => Model.sirket.Sifre, new { @type = "password", placeholder = "Lütfen Şifrenizi Adınızı Giriniz" })
 
                                     @*< select name = "Il" >
-                                        @foreach (var item in Session["Iller"] as List<Iller>)
-                                        {
-                                            < option value = "@item.sehir" > @item.sehir </ option >
-                                        }
-                                        </ select >
-                                        < select name = "Ilce" >
+                                @foreach (var item in Session["Iller"] as List<Iller>)
+                                {
+                                    < option value = "@item.sehir" > @item.sehir </ option >
+                                }
+                                </ select >
+                                < select name = "Ilce" >
 
 
-                                        < option value = "Ilce1" > Ilce1 </ option >
+                                < option value = "Ilce1" > Ilce1 </ option >
 
 
-                                        </ select >
-                                        @* buralara combobox ile ilgili şeyler gelecek(vergi dairesi falan)*@
+                                </ select >
+                                @* buralara combobox ile ilgili şeyler gelecek(vergi dairesi falan)*@
 
 
                                     <input type="submit" value="Kayıt Ol" />
@@ -81,6 +80,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-sm-7">
             </div>
         </div>
     </div>

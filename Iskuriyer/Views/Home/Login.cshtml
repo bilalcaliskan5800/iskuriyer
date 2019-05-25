@@ -31,7 +31,7 @@
                                 @using (Html.BeginForm("LoginBussines", "BusinessMan", FormMethod.Post))
                                 {
                                     @Html.TextBoxFor(Model => Model.sirket.KullaniciAdi, new { @type = "text", placeholder = "Lütfen Kullanıcı Adınızı Giriniz" })
-                                    @Html.TextBoxFor(Model => Model.sirket.Sifre, new { @type = "text", placeholder = "Lütfen Şifrenizi  Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.sirket.Sifre, new { @type = "password", placeholder = "Lütfen Şifrenizi  Giriniz" })
 
 
 
@@ -43,8 +43,8 @@
                             <div id="log-inb">
                                 @using (Html.BeginForm("KursiyerLogin", "KursiyerMan", FormMethod.Post))
                                 {
-                                    @Html.TextBoxFor(Model => Model.kursiyer.Adi, new { @type = "text", placeholder = "Kursiyer Kullanıcı Adınızı Giriniz" })
-                                    @Html.TextBoxFor(Model => Model.kursiyer.Sifre, new { @type = "text", placeholder = "Kursiyer Şifrenizi  Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.Kursiyer_iletisim.EPosta, new { @type = "email", placeholder = "Email Adresinizi Giriniz" })
+                                    @Html.TextBoxFor(Model => Model.kursiyer.Sifre, new { @type = "password", placeholder = "Kursiyer Şifrenizi  Giriniz" })
 
 
 

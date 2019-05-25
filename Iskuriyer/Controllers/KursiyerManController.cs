@@ -24,7 +24,10 @@ namespace Iskuriyer.Controllers
             kur.Sifre = kursiyer.Sifre;
             kur.DogumTarihi = kursiyer.DogumTarihi;
             ki.TelefonNo = kursiyer_Iletisim.TelefonNo;
+           
             ki.EPosta = kursiyer_Iletisim.EPosta;
+            
+
             km.InsertKursiyer(kur);
             int id=kur.ID;
             ki.KursiyerID = id;
@@ -34,10 +37,13 @@ namespace Iskuriyer.Controllers
         }
 
         [HttpPost]
-        public ActionResult KursiyerLogin(Kursiyer kursiyer)
+        public ActionResult KursiyerLogin(Kursiyer kursiyer,Kursiyer_Iletisim kursiyer_Iletisim)
         {
+            Kursiyer_Iletisim ki = kim.GetKursiyer_Iletisim(kursiyer_Iletisim.EPosta);
+         
+            int id = ki.KursiyerID;
 
-            Kursiyer kur = km.GetKursiyer(kursiyer.Adi);
+            Kursiyer kur = km.GetKursiyer(id);
             if (kur.Sifre==kursiyer.Sifre)
             {
                 Session["KursiyerLogin"]=kur;

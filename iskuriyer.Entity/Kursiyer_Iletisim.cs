@@ -17,7 +17,7 @@ namespace iskuriyer.Entity
         [StringLength(150)]
         public string EPosta { get; set; }
 
-        public int? KursiyerID { get; set; }
+        public int KursiyerID { get; set; }
 
         public virtual Kursiyer Kursiyer { get; set; }
     }

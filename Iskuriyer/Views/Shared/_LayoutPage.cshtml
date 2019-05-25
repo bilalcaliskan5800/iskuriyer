@@ -38,10 +38,15 @@
                         <li><a href="#" class="fa fa-twitter"></a></li>
                         <li><a href="#" class="fa fa-google-plus"></a></li>
                     </ul>
-                    <ul class="authentication">
-                        <li><a href="/Home/Login">Giriş Yap</a></li>
-                        <li><a href="/Home/Register">Kayıt Ol</a></li>
-                    </ul>
+                    @if (Session["KursiyerLogin"] == null && Session["SirketLogin"] == null)
+                    {
+
+                        <ul class="authentication">
+                            <li><a href="/Home/Login">Giriş Yap</a></li>
+                            <li><a href="/Home/Register">Kayıt Ol</a></li>
+                        </ul>
+                    }
+
                 </div>
             </div>
             <!-- end .uou-block-1a -->
@@ -55,10 +60,22 @@
                     <nav class="nav">
                         <ul class="sf-menu">
                             <li class="active"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i></a></li>
-                            <li>@Html.ActionLink("Profesyoneller", "GetEmployee", "Employee")</li>
-                            <li>@Html.ActionLink("Şirket Profili", "BusinessProfile", "Profile")</li>
-                            <li> @Html.ActionLink("Kullanıcı Paneli", "UserDash", "Profile")</li>
-                            <li> @Html.ActionLink("Kullanıcı Profili", "UserProfile", "Profile")</li>
+                            @if (Session["SirketLogin"] != null)
+                            {
+                                <li>@Html.ActionLink("Profesyoneller", "GetEmployee", "Employee")</li>
+
+                                <li>@Html.ActionLink("Şirket Profili", "BusinessProfile", "Profile")</li>
+                                <li> <a href="~/Home/LogOut"> <i class="fa fa-sign-out"></i> Oturumu sonlandır </a> </li>
+
+                            }
+                            @*<li> @Html.ActionLink("Kullanıcı Paneli", "UserDash", "Profile")</li>*@
+                            @if (Session["KursiyerLogin"] != null)
+                            {
+                                <li>@Html.ActionLink("Profesyoneller", "GetEmployee", "Employee")</li>
+
+                                <li> @Html.ActionLink("Kullanıcı Profili", "UserProfile", "Profile")</li>
+                                <li> <a href="~/Home/LogOut"> <i class="fa fa-sign-out"></i> Oturumu sonlandır </a> </li>
+                            }
                         </ul>
                     </nav>
                 </div>
@@ -90,7 +107,7 @@
                 <div class="col-md-3 col-sm-6">
                     <h5>Twitter Beslemesi</h5>
                     <ul class="twitter-feed">
-                       direk twitterdan alınacak
+                        direk twitterdan alınacak
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">

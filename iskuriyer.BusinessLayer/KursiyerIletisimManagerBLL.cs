@@ -18,5 +18,10 @@ namespace iskuriyer.BusinessLayer
             repo.Insert(ki);
         }
 
+        public Kursiyer_Iletisim GetKursiyer_Iletisim(string Eposta)
+        {
+            return repo.Find(x=> x.EPosta== Eposta);
+        }
+
     }
 }

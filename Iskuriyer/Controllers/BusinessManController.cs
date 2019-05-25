@@ -32,7 +32,7 @@ namespace Iskuriyer.Controllers
         public ActionResult LoginBussines(Sirket sirket)
         {
             Sirket sir = bm.GetSirket(sirket.KullaniciAdi);
-            if (sir.Sifre==sirket.Sifre)
+            if (sir.Sifre==sirket.Sifre.Trim())
             {
                 Session["SirketLogin"] = sir;
 

@@ -20,12 +20,29 @@ namespace Iskuriyer.Controllers
 
         public ActionResult Login()
         {
+
             return View();
         }
 
         public ActionResult Register()
         {
             return View();
+        }
+
+        public ActionResult LogOut()
+        {
+
+            if (Session["KursiyerLogin"]!=null)
+            {
+                Session["KursiyerLogin"] = null;
+
+            }
+            else if (Session["SirketLogin"]!=null)
+            {
+                Session["SirketLogin"] = null;
+
+            }
+            return RedirectToAction("Index");
         }
     }
 }

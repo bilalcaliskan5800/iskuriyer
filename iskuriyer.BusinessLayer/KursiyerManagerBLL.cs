@@ -20,9 +20,9 @@ namespace iskuriyer.BusinessLayer
         } 
 
 
-        public Kursiyer GetKursiyer(string Name)
+        public Kursiyer GetKursiyer(int id)
         {
-            return repo.Find(x => x.Adi == Name);
+            return repo.Find(x => x.ID == id);
 
         }
 

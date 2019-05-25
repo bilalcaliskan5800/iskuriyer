@@ -13,15 +13,7 @@ namespace Iskuriyer.Controllers
     {
         KursiyerManagerBLL km = new KursiyerManagerBLL();
         KursiyerIletisimManagerBLL kim = new KursiyerIletisimManagerBLL();
-        // GET: KursiyerMan
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult InsertKursiyer()
-        {
-            return View();
-        }
+       
         [HttpPost]
         public ActionResult InsertKursiyer(Kursiyer kursiyer,Kursiyer_Iletisim kursiyer_Iletisim)
         {
@@ -41,11 +33,6 @@ namespace Iskuriyer.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
-        public ActionResult KursiyerLogin()
-        {
-            return View();
-        }
         [HttpPost]
         public ActionResult KursiyerLogin(Kursiyer kursiyer)
         {
@@ -59,8 +46,5 @@ namespace Iskuriyer.Controllers
             }
             return RedirectToAction("Index","Home");
         }
-
-
-
     }
 }

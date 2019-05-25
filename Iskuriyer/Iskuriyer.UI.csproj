@@ -3075,12 +3075,16 @@
     <Content Include="less\style\typography.less" />
     <Content Include="less\style\uou-demo-block.less" />
     <Content Include="less\variables.less" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Profile\UserDash.cshtml" />
     <Content Include="Views\Profile\BusinessProfile.cshtml" />
     <Content Include="Views\Profile\UserProfile.cshtml" />
     <Content Include="Views\Employee\GetEmployee.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

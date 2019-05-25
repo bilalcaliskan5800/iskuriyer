@@ -11,17 +11,7 @@ namespace Iskuriyer.Controllers
     public class BusinessManController : Controller
     {
         BusinessManagerBLL bm = new BusinessManagerBLL();
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult InsertBussines()
-        {
-            return View();
-        }
-
-
+        
         [HttpPost]
         public ActionResult InsertBussines(Sirket sirket)
         {
@@ -36,11 +26,6 @@ namespace Iskuriyer.Controllers
             sir.YetkiliAdiSoyadi = sirket.YetkiliAdiSoyadi;
             bm.InsertBusiness(sir);
             return RedirectToAction("Index", "Home");
-        }
-
-        public ActionResult LoginBussines()
-        {
-            return View();
         }
 
         [HttpPost]
